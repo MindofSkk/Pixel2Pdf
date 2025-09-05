@@ -266,7 +266,7 @@
 import React, { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import "./PdfMerger.css";
-import PdfCompressor from "./PdfCompressor";
+// import PdfCompressor from "./PdfCompressor";
 
 const PdfMerger: React.FC = () => {
   const [files, setFiles] = useState<File[]>([]);
