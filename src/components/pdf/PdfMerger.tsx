@@ -493,10 +493,10 @@ const PdfMerger: React.FC = () => {
           {showPreview ? "Hide Preview" : "ShowPreview"}
         </button>
       </div>
-      
+
 
       {/* Download Section */}
-      {mergedPdfUrl && showPreview && ( // only show iframe when preview clicked
+      {mergedPdfUrl && ( // only show iframe when preview clicked
         <div className="download-box">
           <h4>Download PDF</h4>
           <a
@@ -506,6 +506,17 @@ const PdfMerger: React.FC = () => {
           >
             Download PDF
           </a>
+          {/* <iframe
+            src={mergedPdfUrl}
+            width="100%"
+            height="400px"
+            title="PDF Preview"
+          /> */}
+        </div>
+      )}
+      {showPreview && mergedPdfUrl && ( // only show iframe when preview clicked
+        <div className="download-box" style={{ marginTop: "20px" }}>
+          <h4>PDF Preview</h4>
           <iframe
             src={mergedPdfUrl}
             width="100%"
