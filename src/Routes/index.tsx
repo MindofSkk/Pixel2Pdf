@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Header } from "../components/pages/Header";
 import Home from "../components/pdf/Home";
-import Footer from "../components/pages/Footer";
+// import Footer from "../components/pages/Footer";
 import PrivacyPolicy from "../components/pages/PrivacyPolicy";
 import ContactUs from "../components/pages/ContactUs";
 
@@ -32,7 +32,7 @@ const AppRoutes: React.FC = () => (
         {/* <Route path="/compress" element={<CompressPdf />} /> */}
         {/* <Route path="/convert" element={<ConvertPdf />} /> */}
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Suspense>
   </BrowserRouter>
 );

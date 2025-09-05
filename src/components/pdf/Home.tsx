@@ -160,8 +160,8 @@ const Home: React.FC = () => {
 
 				<div className="home2-tools-grid">
 					{tools.map((tool, idx) => (
-						<div key={idx} className="home2-tool-card animated-card">
-							<Link to={tool.link} className="home2-tool-link">
+						<div key={idx} className="home2-tool-card animated-card" >
+							<Link to={tool.link} className="home2-tool-link"   >
 								<div
 									className="home2-tool-icon"
 									style={{ color: tool.color }}

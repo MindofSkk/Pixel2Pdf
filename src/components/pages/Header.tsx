@@ -22,9 +22,9 @@ export const Header: React.FC = () => {
       >
         <div className="logo">
             {/* <img src="./src/assets/mainlogo.png" alt="" width={"200px"} /> */}
-          <span style={{ fontWeight: "bold", color: "white", fontSize: "20px" }}>
-            Pixel2PDF
-          </span>
+          <a style={{ fontWeight: "bold", color: "white", fontSize: "20px" }} href="/">
+            Pixel2Pdf
+          </a>
         </div>
         <nav style={{ display: "flex", gap: "20px" }}>
           <a href="#merge" style={{ color: "white", textDecoration: "none" }}>
