@@ -1,0 +1,109 @@
+/* PdfToWord.css with prefixed class names */
+
+/* Container styling */
+.pdftoword-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 50px;
+}
+
+
+/* Card for converter */
+.pdftoword-converter-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pdftoword-converter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* File input */
+.pdftoword-file-input {
+  padding: 10px;
+  border: 2px dashed #ced4da;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.pdftoword-file-input:hover {
+  border-color: #198754;
+}
+
+/* Button styling */
+.pdftoword-btn {
+  background-color: #198754;
+  border: none;
+  font-weight: bold;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.pdftoword-btn:hover {
+  background-color: #157347;
+}
+
+/* Error message */
+.pdftoword-error {
+  font-size: 14px;
+  margin-top: 8px;
+  color: #dc3545;
+}
+
+/* AdSense placeholder */
+.pdftoword-adsense {
+  border: 1px dashed #adb5bd;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Heading & paragraph styling */
+.pdftoword-heading {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #212529;
+}
+
+.pdftoword-paragraph {
+  text-align: center;
+  color: #495057;
+  margin-bottom: 25px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .pdftoword-converter-card {
+    padding: 20px;
+  }
+
+  .pdftoword-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .pdftoword-heading {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdftoword-file-input {
+    font-size: 14px;
+  }
+
+  .pdftoword-adsense {
+    height: 60px !important;
+  }
+}

@@ -1,0 +1,197 @@
+/* PdfToJpg.css */
+
+/* Container */
+.pdftojpg-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading & paragraph */
+.pdftojpg-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.pdftojpg-paragraph {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: #555;
+}
+
+/* Converter card */
+.pdftojpg-converter-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 2px dashed #ccc;
+}
+
+.pdftojpg-converter-card.active {
+  border-color: #28a745;
+  background: #f0fff4;
+}
+
+/* File input & info */
+.pdftojpg-file-input {
+  display: none;
+}
+
+.pdftojpg-file-info {
+  margin: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.pdftojpg-clear-btn {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.pdftojpg-clear-btn:hover {
+  background: #c82333;
+}
+
+/* Page selection */
+.pdftojpg-page-selection {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.pdftojpg-page-selection input[type="number"] {
+  width: 60px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Buttons */
+.pdftojpg-btn,
+.pdftojpg-download-all-btn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 12px;
+}
+
+.pdftojpg-btn:hover:not(:disabled),
+.pdftojpg-download-all-btn:hover {
+  background: #218838;
+}
+
+.pdftojpg-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading & status */
+.pdftojpg-loading {
+  display: inline-block;
+  margin-left: 12px;
+  font-size: 0.95rem;
+  color: #28a745;
+}
+
+.pdftojpg-status {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Preview & pages grid */
+.pdftojpg-preview {
+  margin-top: 24px;
+}
+
+.pdftojpg-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.pdftojpg-page-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.pdftojpg-page-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+/* Download per page button */
+.pdftojpg-download-btn {
+  display: block;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-top: 6px;
+}
+
+.pdftojpg-download-btn:hover {
+  background: #0069d9;
+}
+
+/* AdSense placeholder */
+.pdftojpg-adsense {
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pdftojpg-converter-card {
+    padding: 20px;
+  }
+
+  .pdftojpg-btn,
+  .pdftojpg-download-all-btn {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdftojpg-pages-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
