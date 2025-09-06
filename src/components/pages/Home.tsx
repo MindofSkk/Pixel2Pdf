@@ -191,14 +191,72 @@ import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 // Define tools
+// const tools = [
+//   { label: "Merge PDF Online", description: "Easily merge PDFs.", icon: "↔️", color: "#faad14", link: "/merge-pdf" },
+//   { label: "Split PDF Online", description: "Extract specific pages.", icon: "✂️", color: "#faad14", link: "/split-pdf" },
+//   { label: "Compress PDF Online", description: "Reduce PDF size.", icon: "🗜️", color: "#52c41a", link: "/compress-pdf" },
+//   { label: "Convert PDF to Word", description: "Convert to editable Word.", icon: "📄", color: "#1890ff", link: "/pdf-to-word" },
+//   { label: "Convert PDF to JPG", description: "Turn PDF into images.", icon: "🖼️", color: "#faad14", link: "/pdf-to-jpg" },
+//   { label: "Unlock PDF", description: "Remove PDF password.", icon: "🔓", color: "#52c41a", link: "/unlock-pdf" },
+//   { label: "Protect PDF", description: "Add password protection.", icon: "🔒", color: "#1890ff", link: "/protect-pdf" },
+// ];
 const tools = [
-  { label: "Merge PDF Online", description: "Easily merge PDFs.", icon: "↔️", color: "#faad14", link: "/merge-pdf" },
-  { label: "Split PDF Online", description: "Extract specific pages.", icon: "✂️", color: "#faad14", link: "/split-pdf" },
-  { label: "Compress PDF Online", description: "Reduce PDF size.", icon: "🗜️", color: "#52c41a", link: "/compress-pdf" },
-  { label: "Convert PDF to Word", description: "Convert to editable Word.", icon: "📄", color: "#1890ff", link: "/pdf-to-word" },
-  { label: "Convert PDF to JPG", description: "Turn PDF into images.", icon: "🖼️", color: "#faad14", link: "/pdf-to-jpg" },
-  { label: "Unlock PDF", description: "Remove PDF password.", icon: "🔓", color: "#52c41a", link: "/unlock-pdf" },
-  { label: "Protect PDF", description: "Add password protection.", icon: "🔒", color: "#1890ff", link: "/protect-pdf" },
+  {
+    label: "Merge PDF Online",
+    description:
+      "Easily merge multiple PDF files into a single document for free. Fast, secure, and works directly in your browser.",
+    icon: "↔️",
+    color: "#faad14",
+    link: "/merge-pdf",
+  },
+  {
+    label: "Split PDF Online",
+    description:
+      "Extract or separate specific pages from your PDF into a new file instantly. No signup required.",
+    icon: "✂️",
+    color: "#faad14",
+    link: "/split-pdf",
+  },
+  {
+    label: "Compress PDF Online",
+    description:
+      "Reduce PDF file size without losing quality. Optimize PDFs for web, email, or storage in seconds.",
+    icon: "🗜️",
+    color: "#52c41a",
+    link: "/compress-pdf",
+  },
+  {
+    label: "Convert PDF to Word",
+    description:
+      "Convert PDF to editable Word documents (.docx) online. Preserve formatting and layout with high accuracy.",
+    icon: "📄",
+    color: "#1890ff",
+    link: "/pdf-to-word",
+  },
+  {
+    label: "Convert PDF to JPG",
+    description:
+      "Turn PDF pages into high-quality JPG images. Download all pages or selected ones quickly.",
+    icon: "🖼️",
+    color: "#faad14",
+    link: "/pdf-to-jpg",
+  },
+  {
+    label: "Unlock PDF (Remove Password)",
+    description:
+      "Remove password protection from secured PDF files instantly. Access your locked PDF without hassle.",
+    icon: "🔓",
+    color: "#52c41a",
+    link: "/unlock-pdf",
+  },
+  {
+    label: "Protect PDF with Password",
+    description:
+      "Encrypt and secure your PDF with a strong password. Prevent unauthorized access to sensitive files.",
+    icon: "🔒",
+    color: "#1890ff",
+    link: "/protect-pdf",
+  }
 ];
 
 // Optional tabs (if needed)
