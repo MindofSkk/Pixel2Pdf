@@ -187,7 +187,9 @@ const CompressPdf: React.FC = () => {
 
       // Compression settings
       let quality = 0.7; // balanced
+      console.log(quality);
       if (compressionLevel === "high") quality = 0.4;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       if (compressionLevel === "low") quality = 0.9;
 
       // Iterate through pages and scale down images
@@ -198,11 +200,22 @@ const CompressPdf: React.FC = () => {
       }
 
       // Save compressed PDF
+      // const compressedBytes = await pdfDoc.save({
+      //   useObjectStreams: true,
+      // });
+
+      // const blob = new Blob([compressedBytes], { type: "application/pdf" });
+      // const url = URL.createObjectURL(blob);
+      // setCompressedUrl(url);
+
       const compressedBytes = await pdfDoc.save({
         useObjectStreams: true,
       });
 
-      const blob = new Blob([compressedBytes], { type: "application/pdf" });
+      // Convert to a plain Uint8Array to ensure compatibility
+      const plainBytes = new Uint8Array(compressedBytes); // copies the data
+
+      const blob = new Blob([plainBytes], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
       setCompressedUrl(url);
     } catch (error) {
@@ -280,7 +293,7 @@ const CompressPdf: React.FC = () => {
           </a>
         </div>
       )}
-        {/* Ad placement (bottom) */}
+      {/* Ad placement (bottom) */}
       <div className="ad-banner mt-5">Your Ad Here</div>
     </div>
   );

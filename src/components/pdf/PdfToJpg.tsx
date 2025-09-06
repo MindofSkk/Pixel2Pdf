@@ -61,6 +61,7 @@ const PdfToJpg: React.FC = () => {
     try {
       const arrayBuffer = await inputFile.arrayBuffer();
       const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      // eslint-disable-next-line prefer-const
       let urls: string[] = [];
 
       if (pageOption === "all") {
