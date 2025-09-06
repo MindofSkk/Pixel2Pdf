@@ -6,9 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "../components/pages/Header";
 import Home from "../components/pages/Home";
 import PrivacyPolicy from "../components/pages/PrivacyPolicy";
-import ContactUs from "../components/pages/ContactUs";
-import TermsConditions from "../components/pages/TermsConditions";
+import ContactUs from "../components/pages/Contact";
 import AboutUs from "../components/pages/AboutUs";
+import TermsAndConditions from "../components/pages/TermsAndConditions";
+import Footer from "../components/pages/Footer";
 
 // PDF Tools (lazy-loaded)
 const PdfMerger = lazy(() => import("../components/pdf/PdfMerger"));
@@ -28,7 +29,7 @@ const AppRoutes: React.FC = () => (
         {/* Main Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-and-conditions" element={<TermsConditions />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
 
@@ -41,6 +42,7 @@ const AppRoutes: React.FC = () => (
         <Route path="/unlock-pdf" element={<UnlockPdf />} />
         <Route path="/protect-pdf" element={<ProtectPdf />} />
       </Routes>
+      <Footer/>
     </Suspense>
   </BrowserRouter>
 );

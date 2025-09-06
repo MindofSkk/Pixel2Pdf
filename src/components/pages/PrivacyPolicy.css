@@ -1,0 +1,75 @@
+.privacy-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.7;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    margin-top: 80px;
+
+}
+
+.privacy-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #0077cc;
+  text-align: center;
+}
+
+.privacy-container h2 {
+  font-size: 1.4rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.privacy-container p {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-container a {
+  color: #0077cc;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .privacy-container {
+    padding: 1.2rem;
+  }
+
+  .privacy-container h1 {
+    font-size: 2rem;
+  }
+
+  .privacy-container h2 {
+    font-size: 1.25rem;
+  }
+
+  .privacy-container p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-container {
+    padding: 1rem;
+  }
+
+  .privacy-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .privacy-container h2 {
+    font-size: 1.1rem;
+  }
+
+  .privacy-container p {
+    font-size: 0.95rem;
+  }
+}
