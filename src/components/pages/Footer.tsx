@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="site-footer">
       <div className="footer-content">
-        <p>&copy; {new Date().getFullYear()} Pixel2PDF. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Pixel2PDF. All rights reserved. V 0.1</p>
         <div className="footer-links">
           <Link to="/privacy-policy">Privacy Policy</Link>
           <Link to="/terms-and-conditions">Terms & Conditions</Link>
