@@ -4,8 +4,9 @@
   padding: 20px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px #00000014;
   text-align: center;
+  margin-top: 80px;
 }
 
 .title {
@@ -47,10 +48,18 @@
   font-weight: 600;
 }
 
-.merge-btn { background-color: #4a90e2; }
-.split-btn { background-color: #50c878; }
-.compress-btn { background-color: #f5a623; }
-.convert-btn { background-color: #d0021b; }
+.merge-btn {
+  background-color: #4a90e2;
+}
+.split-btn {
+  background-color: #50c878;
+}
+.compress-btn {
+  background-color: #f5a623;
+}
+.convert-btn {
+  background-color: #d0021b;
+}
 
 .btn:disabled {
   opacity: 0.5;
@@ -71,3 +80,134 @@
   text-decoration: none;
   font-weight: bold;
 }
+
+/* --- Steps Section --- */
+.steps-section {
+  background: #ffffff;
+  padding: 40px 25px;
+  border-radius: 16px;
+  margin-top: 50px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.steps-section h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #222;
+  text-align: center;
+}
+
+.steps-section p {
+  font-size: 1.05rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Steps List */
+.steps-section ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.steps-section ol li {
+  background: #f9fafc;
+  border: 1px solid #e3e6eb;
+  border-radius: 12px;
+  padding: 18px 20px 18px 60px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.steps-section ol li:hover {
+  background: #eef6ff;
+  border-color: #cce0ff;
+  transform: translateY(-3px);
+}
+
+/* Number Style */
+.steps-section ol li::before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #1890ff, #0050b3);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Highlighted Keywords */
+.steps-section ol li strong {
+  font-weight: 600;
+  color: #0050b3;
+}
+
+/* Bottom Text */
+.steps-section .note {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 25px;
+  line-height: 1.6;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .steps-section {
+    padding: 30px 20px;
+  }
+  .steps-section h3 {
+    font-size: 1.6rem;
+  }
+  .steps-section p {
+    font-size: 0.95rem;
+  }
+  .steps-section ol li {
+    font-size: 0.95rem;
+    padding: 16px 18px 16px 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps-section {
+    padding: 25px 15px;
+  }
+  .steps-section h3 {
+    font-size: 1.4rem;
+  }
+  .steps-section ol li {
+    font-size: 0.9rem;
+    padding: 14px 16px 14px 50px;
+  }
+  .steps-section ol li::before {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 0.85rem;
+    left: 15px;
+  }
+}
+
