@@ -1,5 +1,5 @@
 import React from "react";
-import "./About.css"; // Update path if needed
+import "./About.css"; // Ensure correct path
 
 const AboutUs: React.FC = () => {
   return (
