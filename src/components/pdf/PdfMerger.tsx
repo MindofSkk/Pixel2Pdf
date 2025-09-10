@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { Helmet } from "react-helmet-async";
 import "./PdfMerger.css";
+import SchemaMarkup from "../../subcomponents/SchemaMarkup";
 
 const PdfMerger: React.FC = () => {
   const [files, setFiles] = useState<File[]>([]);
@@ -69,6 +70,45 @@ const PdfMerger: React.FC = () => {
     setDraggedIndex(null);
   };
 
+  //  schema markup (tick sign + rating)
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Pixel2PDF - Merge PDF Online",
+    "url": "https://pixel2pdf.com/merge-pdf",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "description": "Easily merge multiple PDF files into one PDF online for free with Pixel2PDF. Fast, safe, and no installation required.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "120"
+    }
+  };
+
+  // FAQ schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I merge PDF files online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upload your files to Pixel2PDF, arrange them in order, and click Merge. You can preview and download instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Pixel2PDF free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Pixel2PDF is 100% free, safe, and requires no signup."
+        }
+      }
+    ]
+  };
   return (
     <>
       {/* ✅ SEO Meta Tags */}
@@ -82,7 +122,7 @@ const PdfMerger: React.FC = () => {
           name="keywords"
           content="merge pdf, merge pdf online, combine pdf, pdf merger free, join pdf files, pixel2pdf, pixeltopdf, pixels2pdf, combine multiple pdfs, merge pdf without signup, merge pdf fast, free pdf merger, merge pdf tool"
         />
-          <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow" />
 
         <link rel="canonical" href="https://pixel2pdf.com/merge-pdf" />
 
@@ -105,8 +145,19 @@ const PdfMerger: React.FC = () => {
           content="Free online PDF merger. Merge, combine, and join multiple PDF files instantly using Pixel2PDF."
         />
         <meta name="twitter:image" content="https://pixel2pdf.com/twitter-merge.jpg" />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
-
+      <SchemaMarkup
+        name="Pixel2PDF - Merge PDF Online"
+        description="Easily merge multiple PDF files into one PDF online for free with Pixel2PDF. Fast, safe, and no installation required."
+        ratingValue="4.9"
+        reviewCount="120"
+      />
       <div className="pdf-tool-container">
         <h2 className="title">Pixel2PDF – Merge PDF Files</h2>
 
