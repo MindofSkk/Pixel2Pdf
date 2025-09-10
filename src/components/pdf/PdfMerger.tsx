@@ -82,6 +82,8 @@ const PdfMerger: React.FC = () => {
           name="keywords"
           content="merge pdf, merge pdf online, combine pdf, pdf merger free, join pdf files, pixel2pdf, pixeltopdf, pixels2pdf, combine multiple pdfs, merge pdf without signup, merge pdf fast, free pdf merger, merge pdf tool"
         />
+          <meta name="robots" content="index, follow" />
+
         <link rel="canonical" href="https://pixel2pdf.com/merge-pdf" />
 
         {/* Open Graph */}

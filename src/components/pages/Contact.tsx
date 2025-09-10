@@ -16,6 +16,8 @@ const Contact: React.FC = () => {
           name="keywords"
           content="Pixel2PDF contact, Pixel to PDF support, PDF tool help, free PDF converter support, merge PDF help, compress PDF support, convert Word to PDF help, Pixel2PDF email, pixels2pdf contact"
         />
+          <meta name="robots" content="index, follow" />
+
 
         {/* Open Graph (for social media preview) */}
         <meta property="og:title" content="Contact Pixel2PDF | Free PDF Converter Support" />

@@ -12,6 +12,8 @@ const TermsAndConditions: React.FC = () => {
           name="description"
           content="Read the Terms & Conditions of using Pixel2PDF. Learn about free usage policy, file handling, privacy, ads, donations, and user responsibilities."
         />
+          <meta name="robots" content="index, follow" />
+
       </Helmet>
 
       <h1>Terms & Conditions</h1>

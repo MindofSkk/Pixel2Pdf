@@ -110,6 +110,7 @@ const Home: React.FC = () => {
           name="keywords"
           content="Pixel2PDF, pixel2 pdf, pixeltopdf, pixels2pdf, pixel to pdf, merge pdf online free, split pdf, compress pdf, reduce pdf size, pdf to word, convert pdf to word, pdf to jpg, convert pdf to jpg, unlock pdf, remove pdf password, protect pdf, encrypt pdf, secure pdf, free online pdf editor, edit pdf online, pdf tools free, pdf compressor, pdf converter"
         />
+  <meta name="robots" content="index, follow" />
 
         {/* ✅ Canonical URL */}
         <link rel="canonical" href="https://pixel2pdf.com/" />

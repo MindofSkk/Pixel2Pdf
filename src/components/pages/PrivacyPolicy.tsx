@@ -12,6 +12,8 @@ const PrivacyPolicy: React.FC = () => {
           name="description"
           content="Pixel2PDF Privacy Policy - Learn how we protect your privacy, keep your files secure, and ensure safe online PDF conversions."
         />
+          <meta name="robots" content="index, follow" />
+
       </Helmet>
 
       <h1>Privacy Policy</h1>
