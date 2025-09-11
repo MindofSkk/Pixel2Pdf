@@ -96,6 +96,7 @@ const Home: React.FC = () => {
     <div className="home2-root">
       {/* ✅ SEO Meta Tags */}
       <Helmet>
+
         <title>
           Pixel2PDF - Free Online PDF Tools | Merge, Split, Compress, Convert &
           Protect PDFs
