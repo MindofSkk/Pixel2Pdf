@@ -1,12 +1,15 @@
 .pdf-tool-container {
-  max-width: 700px;
-  margin: 30px auto;
+  /* max-width: 700px; */
+  /* margin: 30px auto; */
   padding: 20px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px #00000014;
   text-align: center;
+  margin: 30px;
   margin-top: 80px;
+
+  border: 1px dotted #007bff;
 }
 
 .title {
@@ -21,10 +24,12 @@
   margin-bottom: 20px;
   background: #fafafa;
   cursor: pointer;
+  /* background-color: #bcd8f9; */
+  border: 2px dotted #0050b3;
 }
 
 .upload-box:hover {
-  border-color: #4a90e2;
+  border-color: #2980e4;
 }
 
 .file-list {
@@ -210,8 +215,6 @@
     left: 15px;
   }
 }
-
-
 
 /* ✅ SEO section (scoped to merge page) */
 .pdf-merge.seo-content {
