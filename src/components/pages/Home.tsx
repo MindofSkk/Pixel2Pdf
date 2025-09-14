@@ -79,7 +79,7 @@ const lazyImports: Record<string, () => Promise<any>> = {
   "/merge-pdf": () => import("../pdf/PdfMerger"),
   "/split-pdf": () => import("../pdf/SplitPdf"),
   "/compress-pdf": () => import("../pdf/CompressPdf"),
-  "/pdf-to-word": () => import("../pdf/PdfToWord"),
+  "/pdf-to-word": () => import("../pdf/ConvertFiles/PdfToWord"),
   "/pdf-to-jpg": () => import("../pdf/PdfToJpg"),
   "/unlock-pdf": () => import("../pdf/UnlockPdf"),
   "/protect-pdf": () => import("../pdf/ProtectPdf"),
