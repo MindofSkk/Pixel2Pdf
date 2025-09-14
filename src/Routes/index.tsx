@@ -11,9 +11,10 @@ import AboutUs from "../components/pages/AboutUs";
 import TermsAndConditions from "../components/pages/TermsAndConditions";
 import Footer from "../components/pages/Footer";
 import usePageTracking from "./usePageTracking";
+import MergePDF from "../components/pdf/MergePdf/MergePdf";
 
 // PDF Tools (lazy-loaded)
-const PdfMerger = lazy(() => import("../components/pdf/PdfMerger"));
+// const PdfMerger = lazy(() => import("../components/pdf/PdfMerger"));
 const SplitPdf = lazy(() => import("../components/pdf/SplitPdf"));
 const CompressPdf = lazy(() => import("../components/pdf/CompressPdf"));
 const PdfToWord = lazy(() => import("../components/pdf/PdfToWord"));
@@ -45,13 +46,15 @@ const RouterWrapper: React.FC = () => {
           <Route path="/contact-us" element={<ContactUs />} />
 
           {/* Tool Pages */}
-          <Route path="/merge-pdf" element={<PdfMerger />} />
+          <Route path="/merge-pdf" element={<MergePDF />} />
           <Route path="/split-pdf" element={<SplitPdf />} />
           <Route path="/compress-pdf" element={<CompressPdf />} />
           <Route path="/pdf-to-word" element={<PdfToWord />} />
           <Route path="/pdf-to-jpg" element={<PdfToJpg />} />
           <Route path="/unlock-pdf" element={<UnlockPdf />} />
           <Route path="/protect-pdf" element={<ProtectPdf />} />
+          {/* <Route path="/v" element={<MergePDF />}></Route> */}
+
         </Routes>
         <Footer />
       </Suspense>

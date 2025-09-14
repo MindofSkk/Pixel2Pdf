@@ -1,41 +1,125 @@
+// import React, { useState, useRef, useEffect } from "react";
+// import { Link, useLocation } from "react-router-dom";
+// import Logo from "../../subcomponents/Logo";
+// import "./Header.css";
+
+// export const Header: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [submenuOpen, setSubmenuOpen] = useState(false);
+//   const menuRef = useRef<HTMLDivElement>(null);
+//   const location = useLocation();
+
+//   // Close menu/submenu when clicking outside
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+//         setIsOpen(false);
+//         setSubmenuOpen(false);
+//       }
+//     };
+//     document.addEventListener("mousedown", handleClickOutside);
+//     return () => document.removeEventListener("mousedown", handleClickOutside);
+//   }, []);
+
+//   const handleLinkClick = () => {
+//     setIsOpen(false);
+//     setSubmenuOpen(false);
+//   };
+
+//   return (
+//     <header className="header">
+//       <div className="header-container" ref={menuRef}>
+//         {/* Logo */}
+//         <Link to="/" onClick={handleLinkClick} aria-label="Pixel2PDF Home">
+//           <div className="logo">
+//             <Logo />
+//           </div>
+//         </Link>
+
+//         {/* Hamburger button */}
+//         <button
+//           className={`menu-toggle ${isOpen ? "active" : ""}`}
+//           onClick={() => setIsOpen(prev => !prev)}
+//           aria-expanded={isOpen}
+//           aria-controls="nav-menu"
+//           aria-label="Toggle navigation menu"
+//         >
+//           ☰
+//         </button>
+
+//         {/* Nav menu */}
+//         <nav id="nav-menu" className={`nav ${isOpen ? "open" : ""}`} aria-label="Main Navigation">
+//           <Link to="/" onClick={handleLinkClick} className={location.pathname === "/" ? "active" : ""}>Home</Link>
+
+//           {/* Dropdown submenu */}
+//         <div className={`nav-item dropdown ${submenuOpen ? "open" : ""}`}>
+//   <button className="dropdown-toggle" onClick={() => setSubmenuOpen(prev => !prev)}>
+//     Convert
+//   </button>
+//   <div className="dropdown-menu">
+//     <Link to="/pdf-to-word" onClick={handleLinkClick}>PDF to Word</Link>
+//     <Link to="/pdf-to-excel" onClick={handleLinkClick}>PDF to Excel</Link>
+//     <Link to="/pdf-to-text" onClick={handleLinkClick}>PDF to Text</Link>
+//     <Link to="/pdf-to-image" onClick={handleLinkClick}>PDF to Image</Link>
+//     <Link to="/pdf-to-powerpoint" onClick={handleLinkClick}>PDF to PowerPoint</Link>
+//   </div>
+// </div>
+
+
+//           <Link to="/merge-pdf" onClick={handleLinkClick} className={location.pathname === "/merge-pdf" ? "active" : ""}>Merge PDF</Link>
+//           <Link to="/split-pdf" onClick={handleLinkClick} className={location.pathname === "/split-pdf" ? "active" : ""}>Split PDF</Link>
+//           <Link to="/compress-pdf" onClick={handleLinkClick} className={location.pathname === "/compress-pdf" ? "active" : ""}>Compress PDF</Link>
+//           <Link to="/tools" onClick={handleLinkClick} className={location.pathname === "/tools" ? "active" : ""}>Tools</Link>
+//         </nav>
+//       </div>
+//     </header>
+//   );
+// };
+
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../../subcomponents/Logo";
-import "./Header.css";
+import "./Header.css"; // new CSS file
 
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
-  // Close menu when clicking outside
+  // Close menu/submenu on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsOpen(false);
+        setSubmenuOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  return (
-    <header className="header">
-      <div className="header-container" ref={menuRef}>
-        {/* Logo Section */}
-        <div className="logo">
-          <Link to="/" aria-label="Pixel2PDF Home" onClick={() => setIsOpen(false)}>
-            <Logo />
-          </Link>
-        </div>
+  const handleLinkClick = () => {
+    setIsOpen(false);
+    setSubmenuOpen(false);
+  };
 
-        {/* Hamburger Button (Mobile) */}
+  return (
+    <header className="header-new">
+      <div className="header-container-new" ref={menuRef}>
+        {/* Logo */}
+        <Link to="/" onClick={handleLinkClick} aria-label="Pixel2PDF Home">
+          <div className="logo-new">
+            <Logo />
+          </div>
+        </Link>
+
+        {/* Hamburger Button */}
         <button
-          className={`menu-toggle ${isOpen ? "active" : ""}`}
-          onClick={() => setIsOpen(!isOpen)}
+          className={`menu-toggle-new ${isOpen ? "active" : ""}`}
+          onClick={() => setIsOpen(prev => !prev)}
           aria-expanded={isOpen}
-          aria-controls="nav-menu"
+          aria-controls="nav-menu-new"
           aria-label="Toggle navigation menu"
         >
           ☰
@@ -43,32 +127,32 @@ export const Header: React.FC = () => {
 
         {/* Navigation */}
         <nav
-          id="nav-menu"
-          className={`nav ${isOpen ? "open" : ""}`}
+          id="nav-menu-new"
+          className={`nav-new ${isOpen ? "open" : ""}`}
           aria-label="Main Navigation"
         >
-          <Link to="/merge-pdf" onClick={() => setIsOpen(false)} title="Merge PDF Online - Free Tool">
-            Merge
+          <Link to="/" onClick={handleLinkClick} className={location.pathname === "/" ? "active" : ""}>
+            Home
           </Link>
-          <Link to="/split-pdf" onClick={() => setIsOpen(false)} title="Split PDF Pages Easily">
-            Split
-          </Link>
-          <Link to="/compress-pdf" onClick={() => setIsOpen(false)} title="Compress PDF Files Online">
-            Compress
-          </Link>
-          {/* <Link to="/pdf-to-word" onClick={() => setIsOpen(false)} title="Convert PDF to Word">Convert</Link> */}
-          <Link to="/about-us" onClick={() => setIsOpen(false)} title="About Pixel2PDF">
-            About Us
-          </Link>
-          <Link to="/privacy-policy" onClick={() => setIsOpen(false)} title="Privacy Policy">
-            Privacy Policy
-          </Link>
-          <Link to="/terms-and-conditions" onClick={() => setIsOpen(false)} title="Terms and Conditions">
-            Terms
-          </Link>
-          <Link to="/contact-us" onClick={() => setIsOpen(false)} title="Contact Pixel2PDF">
-            Contact
-          </Link>
+
+          {/* Dropdown Submenu */}
+          <div className={`nav-item-new dropdown-new ${submenuOpen ? "open" : ""}`}>
+            <button className="dropdown-toggle-new" onClick={() => setSubmenuOpen(prev => !prev)}>
+              Convert
+            </button>
+            <div className="dropdown-menu-new">
+              <Link to="/pdf-to-word" onClick={handleLinkClick}>PDF to Word</Link>
+              <Link to="/pdf-to-excel" onClick={handleLinkClick}>PDF to Excel</Link>
+              <Link to="/pdf-to-text" onClick={handleLinkClick}>PDF to Text</Link>
+              <Link to="/pdf-to-image" onClick={handleLinkClick}>PDF to Image</Link>
+              <Link to="/pdf-to-powerpoint" onClick={handleLinkClick}>PDF to PowerPoint</Link>
+            </div>
+          </div>
+
+          <Link to="/merge-pdf" onClick={handleLinkClick} className={location.pathname === "/merge-pdf" ? "active" : ""}>Merge PDF</Link>
+          <Link to="/split-pdf" onClick={handleLinkClick} className={location.pathname === "/split-pdf" ? "active" : ""}>Split PDF</Link>
+          <Link to="/compress-pdf" onClick={handleLinkClick} className={location.pathname === "/compress-pdf" ? "active" : ""}>Compress PDF</Link>
+          <Link to="/tools" onClick={handleLinkClick} className={location.pathname === "/tools" ? "active" : ""}>Tools</Link>
         </nav>
       </div>
     </header>

@@ -1,77 +1,209 @@
-/* Header wrapper */
-.header {
+/* ---------- HEADER NEW ---------- */
+.header-new {
   width: 100%;
-  background-color: #e6f7ff;
+  height: 60px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  color: black;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 
-/* Flex container */
-.header-container {
+.header-container-new {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo-new {
+  width: 160px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-/* Logo size */
-.logo {
-  width: 180px;
-  height: auto;
-}
-
-/* Navigation (desktop default) */
-.nav {
+/* Navigation Links */
+.nav-new {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
-.nav a {
-  color: black;
+.nav-new a {
+  color: #333;
   text-decoration: none;
-  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.2s ease;
 }
 
-.nav a:hover {
-  text-decoration: underline;
+.nav-new a.active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
 }
 
-/* Hamburger button (hidden on desktop) */
-.menu-toggle {
+.nav-new a:hover {
+  color: #007bff;
+}
+
+/* Dropdown */
+.nav-item-new.dropdown-new {
+  position: relative;
+}
+
+.dropdown-toggle-new {
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.dropdown-toggle-new:hover {
+  color: #007bff;
+}
+
+.dropdown-menu-new {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.nav-item-new.dropdown-new.open .dropdown-menu-new {
+  display: flex;
+}
+
+.dropdown-menu-new a {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu-new a:hover {
+  background: #f5f5f5;
+  color: #007bff;
+}
+
+/* Hamburger Button */
+.menu-toggle-new {
   display: none;
   font-size: 28px;
   background: none;
   border: none;
   cursor: pointer;
-  color: black;
+  color: #333;
 }
 
-/* Responsive Styles */
+/* ---------- MOBILE RESPONSIVE ---------- */
 @media (max-width: 768px) {
-  .menu-toggle {
+  .menu-toggle-new {
     display: block;
   }
 
-  .nav {
-    position: absolute;
-    top: 60px; /* below header */
-    left: 0;
-    right: 0;
-    background: #e6f7ff;
+  .nav-new {
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 0;
-    display: none; /* hidden by default */
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    transition: max-height 0.3s ease;
+    border-top: 1px solid #e6e6e6;
   }
 
-  .nav.open {
-    display: flex; /* visible when open */
+  .nav-new.open {
+    max-height: 500px; /* enough to show all links */
+  }
+
+  .nav-new a, .dropdown-toggle-new {
+    width: 100%;
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+  }
+
+  .nav-item-new.dropdown-new .dropdown-menu-new {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .nav-item-new.dropdown-new .dropdown-menu-new a {
+    padding: 12px 40px;
+  }
+
+  .dropdown-toggle-new::after {
+    content: "▼";
+    float: right;
+    margin-right: 10px;
+  }
+}
+
+/* Add top padding to page content so header does not overlap */
+body {
+  padding-top: 60px;
+}
+.header-container-new {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between; /* ensures logo left, menu button right */
+  align-items: center;
+}
+
+/* Hamburger Button */
+.menu-toggle-new {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  margin-left: auto; /* pushes it to the far right */
+}
+
+@media (max-width: 768px) {
+  .menu-toggle-new {
+    display: block;
+  }
+
+  .logo-new {
+    flex: 1; /* takes remaining space on left */
+  }
+}
+
+/*  */
+
+@media (max-width: 768px) {
+  .nav-new {
+    position: absolute;
+    top: 60px; /* exactly below the header */
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    background: #fff;
+    transition: max-height 0.35s ease;
+    border-top: 1px solid #e6e6e6;
+    z-index: 999;
+  }
+
+  .nav-new.open {
+    max-height: 600px; /* enough to show all links */
   }
 }

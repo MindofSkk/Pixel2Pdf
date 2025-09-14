@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+// import { Helmet } from "react-helmet-async";
 import "./Home.css";
+import { SEO } from "../utils/Seo/seo";
+import { SEO_CONFIG } from "../utils/Seo/seoConfig";
 
 const tools = [
   {
@@ -94,57 +96,8 @@ const Home: React.FC = () => {
 
   return (
     <div className="home2-root">
-      {/* ✅ SEO Meta Tags */}
-      <Helmet>
+            <SEO {...SEO_CONFIG.home} />
 
-        <title>
-          Pixel2PDF - Free Online PDF Tools | Merge, Split, Compress, Convert &
-          Protect PDFs
-        </title>
-        <meta
-          name="description"
-          content="Pixel2PDF is your free online PDF toolkit. Merge, split, compress, convert, unlock, and protect PDF files instantly. 100% secure, fast, and works directly in your browser."
-        />
-
-        {/* 🔑 Strong Keywords */}
-        <meta
-          name="keywords"
-          content="Pixel2PDF, pixel2 pdf, pixeltopdf, pixels2pdf, pixel to pdf, merge pdf online free, split pdf, compress pdf, reduce pdf size, pdf to word, convert pdf to word, pdf to jpg, convert pdf to jpg, unlock pdf, remove pdf password, protect pdf, encrypt pdf, secure pdf, free online pdf editor, edit pdf online, pdf tools free, pdf compressor, pdf converter"
-        />
-  <meta name="robots" content="index, follow" />
-
-        {/* ✅ Canonical URL */}
-        <link rel="canonical" href="https://pixel2pdf.com/" />
-
-        {/* 🌐 Open Graph (Facebook/LinkedIn) */}
-        <meta property="og:title" content="Pixel2PDF - Free Online PDF Tools" />
-        <meta
-          property="og:description"
-          content="Merge, split, compress, convert, and protect PDFs online for free. Pixel2PDF is fast, secure, and works in your browser."
-        />
-        <meta property="og:url" content="https://pixel2pdf.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Pixel2PDF" />
-        <meta
-          property="og:image"
-          content="https://pixel2pdf.com/og-image.jpg"
-        />
-
-        {/* 🐦 Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Pixel2PDF - Free Online PDF Tools"
-        />
-        <meta
-          name="twitter:description"
-          content="Free PDF tools: merge, split, compress, convert, unlock & protect PDFs online."
-        />
-        <meta
-          name="twitter:image"
-          content="https://pixel2pdf.com/twitter-image.jpg"
-        />
-      </Helmet>
 
       {/* Hero Section */}
       <div
@@ -154,7 +107,7 @@ const Home: React.FC = () => {
           borderRadius: "0 0 32px 32px",
           backgroundColor: "#eff9fdff",
           marginBottom: "32px",
-          marginTop: "60px",
+          // marginTop: "60px",
           boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
         }}
       >
