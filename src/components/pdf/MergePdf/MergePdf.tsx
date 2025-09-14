@@ -21,6 +21,8 @@ const MergePDF: React.FC = () => {
     const [files, setFiles] = useState<UploadedFile[]>([]);
     const [outputName, setOutputName] = useState("Merged_Document.pdf");
     const [loading, setLoading] = useState(false);
+    const [errorMsg, setErrorMsg] = useState(""); // Stores the alert message
+
 
     // Format size (MB/KB)
     const formatSize = (bytes: number) => {
@@ -29,37 +31,20 @@ const MergePDF: React.FC = () => {
         return (bytes / (1024 * 1024)).toFixed(1) + " MB";
     };
 
-    // Handle file upload
-    // const handleFiles = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    //     if (!event.target.files) return;
-    //     await processFiles(event.target.files);
-    //     // if (!event.target.files) return;
-    //     const uploaded = Array.from(event.target.files);
 
-    //     const mappedFiles = await Promise.all(
-    //         uploaded.map(async (file, index) => {
-    //             let pageCount = null;
-    //             try {
-    //                 const pdf = await PDFDocument.load(await file.arrayBuffer());
-    //                 pageCount = pdf.getPageCount();
-    //             } catch {
-    //                 pageCount = null;
-    //             }
-    //             return {
-    //                 id: Date.now() + index,
-    //                 file,
-    //                 name: file.name,
-    //                 size: formatSize(file.size),
-    //                 pages: pageCount,
-    //             };
-    //         })
-    //     );
-
-    //     setFiles((prev) => [...prev, ...mappedFiles]);
-    // };
 
     const handleFiles = async (event: React.ChangeEvent<HTMLInputElement>) => {
         if (!event.target.files) return;
+
+        const uploaded = Array.from(event.target.files);
+        const invalidFiles = uploaded.filter(file => file.type !== "application/pdf");
+
+        if (invalidFiles.length > 0) {
+            setErrorMsg("Only PDF files are allowed! Please select valid PDF files.");
+            return;
+        }
+
+        setErrorMsg(""); // Clear previous alerts
         await processFiles(event.target.files); // ✅ This is enough
     };
     // Remove file
@@ -134,6 +119,14 @@ const MergePDF: React.FC = () => {
     const handleDrop = async (event: React.DragEvent<HTMLDivElement>) => {
         event.preventDefault();
         if (event.dataTransfer.files && event.dataTransfer.files.length > 0) {
+            const uploaded = Array.from(event.dataTransfer.files);
+            const invalidFiles = uploaded.filter(file => file.type !== "application/pdf");
+            if (invalidFiles.length > 0) {
+                setErrorMsg("Only PDF files are allowed! Please drop valid PDF files.");
+                return;
+            }
+
+            setErrorMsg(""); // Clear alert
             await processFiles(event.dataTransfer.files);
             event.dataTransfer.clearData();
         }
@@ -148,7 +141,12 @@ const MergePDF: React.FC = () => {
     return (
 
         <>
-
+            {errorMsg && (
+                <div className="alert-box">
+                    <span>{errorMsg}</span>
+                    <button className="close-btn" onClick={() => setErrorMsg("")}>×</button>
+                </div>
+            )}
 
             <SEO {...SEO_CONFIG.merge} />
 
